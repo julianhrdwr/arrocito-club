@@ -31,13 +31,17 @@ jobs:
           cd arrocito-android
           npm init -y
           npm install @capacitor/core@7 @capacitor/cli@7 @capacitor/android@7
+          npm install @capacitor/assets
           mkdir www
           cp ../index.html www/index.html
           cp ../manifest.webmanifest www/
           cp ../sw.js www/
           npx cap init "Arrocito Club" "com.arrocitoclub.app" --web-dir www
+          mkdir -p assets
+          cp ../icon.png assets/icon.png
           npx cap add android
           npx cap sync android
+          npx capacitor-assets generate --android
 
       - name: Build APK
         run: |
