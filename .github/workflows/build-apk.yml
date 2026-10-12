@@ -31,7 +31,6 @@ jobs:
           cp ../index.html www/
           cp ../manifest.webmanifest www/
           cp ../sw.js www/
-          cp ../icon.svg www/
           npx cap add android
           npx cap sync android
 
